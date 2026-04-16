@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo of the morphing 12k logo" />
+    <title>12k Logo</title>
+    <style>
+        /* Defaults -------------------------------------------------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            align-items: center;
+            background: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh
+        }
+
+        #logo {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem
+        }
+
+        /* 12k ------------------------------------------------------- */
+
+        .twelve-k {
+            background-color: #ffffff;
+            border-radius: 50% 0 50% 0;
+            height: 200px;
+            position: relative;
+            transition: border-radius 5000ms ease-in-out;
+            width: 200px
+        }
+
+        .index-hole,
+        .relief-notch,
+        .head-access-slot,
+        .drive-spindle-hole,
+        .write-protect-notch {
+            background-color: #000000;
+            position: absolute;
+            z-index: 2
+        }
+
+        .index-hole {
+            border-radius: 50%;
+            height: 8.8%;
+            inset-block-start: 60.4%;
+            inset-inline-start: 64%;
+            width: 8.8%
+        }
+
+        .relief-notch {
+            border-radius: 50%;
+            height: 9%;
+            inset-block-end: -4.5%;
+            inset-inline-start: 31.4%;
+            width: 9%
+        }
+
+        .head-access-slot {
+            border-radius: 50% / 14.8%;
+            height: 25.3%;
+            inset-block-start: 69.2%;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+            width: 7.5%
+        }
+
+        .drive-spindle-hole {
+            border-radius: 50%;
+            height: 30%;
+            inset-block-start: 35%;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+            width: 30%
+        }
+
+        .write-protect-notch {
+            height: 9.3%;
+            inset-block-start: 23.5%;
+            inset-inline-end: 0;
+            transition: width 5000ms ease-in-out;
+            width: 5.5%
+        }
+
+        /* Animation ------------------------------------------------- */
+
+        .twelve-k.mastering {
+            border-radius: 50%
+        }
+
+        .twelve-k.mastering .write-protect-notch {
+            width: 10.5%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="logo" class="twelve-k">
+        <span class="index-hole"></span>
+        <span class="relief-notch"></span>
+        <span class="head-access-slot"></span>
+        <span class="drive-spindle-hole"></span>
+        <span class="write-protect-notch"></span>  
+    </div>
+    <script>
+        const logoContainer = document.getElementById('logo');
+        const classes = ['label', 'mastering'];
+        let current = 0;
+
+        setInterval(() => {
+            current = (current + 1) % classes.length;
+            logoContainer.classList.remove('label', 'mastering');
+            logoContainer.classList.add(classes[current]);
+        }, 5000);
+
+        logoContainer.classList.add(classes[current]);
+    </script>
+</body>
+
+</html>

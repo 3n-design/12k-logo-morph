@@ -1,0 +1,72 @@
+/* 12k ------------------------------------------------------- */
+
+.twelve-k {
+    background-color: #ffffff;
+    border-radius: 50% 0 50% 0;
+    height: 200px;
+    position: relative;
+    transition: border-radius 5000ms linear;
+    width: 200px
+}
+
+.index-hole,
+.relief-notch,
+.head-access-slot,
+.drive-spindle-hole,
+.write-protect-notch {
+    background-color: #000000;
+    position: absolute;
+    z-index: 2
+}
+
+.index-hole {
+    border-radius: 50%;
+    height: 8.8%;
+    inset-block-start: 60.4%;
+    inset-inline-start: 64%;
+    width: 8.8%
+}
+
+.relief-notch {
+    border-radius: 50%;
+    height: 9%;
+    inset-block-end: -4.5%;
+    inset-inline-start: 31.4%;
+    width: 9%
+}
+
+.head-access-slot {
+    border-radius: 50% / 14.8%;
+    height: 25.3%;
+    inset-block-start: 69.2%;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    width: 7.5%
+}
+
+.drive-spindle-hole {
+    border-radius: 50%;
+    height: 30%;
+    inset-block-start: 35%;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    width: 30%
+}
+
+.write-protect-notch {
+    height: 9.3%;
+    inset-block-start: 23.5%;
+    inset-inline-end: 0;
+    transition: width 5000ms ease-in-out;
+    width: 5.5%
+}
+
+/* Animation ------------------------------------------------- */
+
+.twelve-k.mastering {
+    border-radius: 50%
+}
+
+.twelve-k.mastering .write-protect-notch {
+    width: 10.5%
+}
