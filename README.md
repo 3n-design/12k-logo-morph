@@ -28,7 +28,7 @@ Here is an example of the HTML:
 
 ## Live Demo
 
-[https://3ndesign.github.io/12k/demo/](https://3ndesign.github.io/12k-logo-morph/demo/)
+[https://3n-design.github.io/12k-logo-morph/demo/](https://3n-design.github.io/12k-logo-morph/demo/)
 
 ## Credits
 
